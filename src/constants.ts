@@ -76,57 +76,57 @@ export const FRIENDS: Friend[] = [
 	"livia",
 	{
 		href: "https://khcrysalis.dev",
-		image: "https://khcrysalis.dev/88x31/me.png",
+		image: "/badges/samara.png",
 		title: "samara",
 	},
 	{
 		href: "https://mugman.tech",
-		image: "https://mugman.tech/88x31/me.gif",
+		image: "/badges/mugman.gif",
 		title: "mugman",
 	},
 	{
 		href: "https://caitlyn.moe",
-		image: "https://caitlyn.moe/88x31.png",
+		image: "/badges/caitlyn.png",
 		title: "caitlyn",
 	},
 	{
 		href: "https://hhls.xyz",
-		image: "https://rushii.dev/88x31/hhls.png",
+		image: "/badges/nekohaxx.png",
 		title: "nekohaxx",
 	},
 	{
 		href: "https://elissa.moe",
-		image: "https://elissa.moe/88x31.png",
+		image: "/badges/elissa.png",
 		title: "elissa",
 	},
 	{
 		href: "https://rushii.dev",
-		image: "https://rushii.dev/88x31/rushii.webp",
+		image: "/badges/rushii.gif",
 		title: "rushii",
 	},
 	{
 		href: "https://github.com/acquitelol",
-		image: "https://rushii.dev/88x31/rosie.png",
+		image: "/badges/rosie.png",
 		title: "rosie",
 	},
 	{
 		href: "https://vendicated.dev/",
-		image: "https://vendicated.dev/assets/88x31/me.gif",
+		image: "/badges/ven.gif",
 		title: "vendicated",
 	},
 	{
 		href: "https://uncutified.moe/",
-		image: "https://uncutified.moe/88x31.gif",
+		image: "/badges/recutified.gif",
 		title: "recutified",
 	},
 	{
 		href: "https://worf.win/",
-		image: "https://worf.win/images/worfwin.gif",
+		image: "/badges/worfwin.gif",
 		title: "wrof",
 	},
 	{
 		href: "https://sadan.zip",
-		image: "https://sadan.zip/assets/88x31.png",
+		image: "/badges/sadan.png",
 		title: "sadan",
 	},
 	{
@@ -136,17 +136,17 @@ export const FRIENDS: Friend[] = [
 	},
 	{
 		href: "https://wingio.xyz/",
-		image: "https://rushii.dev/88x31/wing.gif",
+		image: "/badges/wing.gif",
 		title: "wing",
 	},
 	{
 		href: "https://lumina0machina.github.io/",
-		image: "https://lumina0machina.github.io/88x31.png",
+		image: "/badges/lumina.png",
 		title: "lumina",
 	},
 	{
 		href: "https://faf4a.me/",
-		image: "https://faf4a.me/88x31.png",
+		image: "/badges/fafa.png",
 		title: "fafa",
 	},
 ];

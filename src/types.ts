@@ -22,42 +22,42 @@ export type Friend = {
 
 export namespace LastFM {
 	export interface RecentTracksResponse {
-		recenttracks: {
-			track: LastFM.Track[];
-			"@attr": {
-				user: string;
-				totalPages: string;
-				page: string;
-				perPage: string;
-				total: string;
+		recenttracks?: {
+			track?: LastFM.Track[];
+			"@attr"?: {
+				user?: string;
+				totalPages?: string;
+				page?: string;
+				perPage?: string;
+				total?: string;
 			};
 		};
 	}
 	export interface Track {
-		artist: {
-			mbid: string;
-			"#text": string;
+		artist?: {
+			mbid?: string;
+			"#text"?: string;
 		};
-		streamable: string;
-		image: Image[];
-		mbid: string;
-		album: {
-			mbid: string;
-			"#text": string;
+		streamable?: string;
+		image?: Image[];
+		mbid?: string;
+		album?: {
+			mbid?: string;
+			"#text"?: string;
 		};
-		name: string;
-		url: string;
+		name?: string;
+		url?: string;
 		date?: {
-			uts: string;
-			"#text": string;
+			uts?: string;
+			"#text"?: string;
 		};
 		"@attr"?: {
-			nowplaying: "true";
+			nowplaying?: "true";
 		};
 	}
 	export interface Image {
-		size: "small" | "medium" | "large" | "extralarge";
-		"#text": string;
+		size?: "small" | "medium" | "large" | "extralarge";
+		"#text"?: string;
 	}
 }
 

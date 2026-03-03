@@ -1,14 +1,14 @@
 import { createRouter, logger, staticFiles } from "@july/snarl";
 import { LastFM } from "./types.ts";
 import MainLayout from "./layouts/MainLayout.tsx";
-import Projects from "./components/Projects.tsx";
-import NowPlaying from "./components/NowPlaying.tsx";
-import Links from "./components/Links.tsx";
-import Footer from "./components/Footer.tsx";
-import Friends from "./components/Friends.tsx";
+import Projects from "./components/projects.tsx";
+import NowPlaying from "./components/now-playing.tsx";
+import Links from "./components/links.tsx";
+import Footer from "./components/footer.tsx";
+import Friends from "./components/friends.tsx";
 import { FRIENDS, LINKS, MISC_PROJECTS, PROJECTS } from "./constants.ts";
 
-const getTrack = async () => {
+const getTrack: () => Promise<LastFM.Track | undefined> = async () => {
 	const params = new URLSearchParams({
 		"method": "user.getrecenttracks",
 		"user": "ohmaigotto",
@@ -18,7 +18,9 @@ const getTrack = async () => {
 	});
 	const track =
 		((await (await fetch(`https://ws.audioscrobbler.com/2.0/?${params}`))
-			.json()) as LastFM.RecentTracksResponse).recenttracks.track[0];
+			.json()) as LastFM.RecentTracksResponse | null)?.recenttracks?.track?.at(
+				0,
+			);
 	return track;
 };
 

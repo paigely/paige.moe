@@ -1,0 +1,17 @@
+@font-face {
+	font-family: "fontello";
+	src: url("./fontello.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon {
+	font-family: "fontello";
+}
+
+.icon-album:before {
+	content: "\e800";
+} /* '' */
+.icon-microphone:before {
+	content: "\e801";
+} /* '' */

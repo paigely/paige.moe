@@ -7,7 +7,6 @@ export default function ({ links }: { links: Link[] }) {
 			<ul>
 				{links.map((link) => (
 					<li>
-						{/* @ts-expect-error */}
 						<a href={link.href} target="_blank">
 							{link.title}
 						</a>

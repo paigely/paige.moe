@@ -1,243 +1,341 @@
 import { JsxElement } from "@july/snarl/jsx-runtime";
 
+const theme = {
+	fontPrimary: "Iosevka Custom Web, monospace",
+
+	bgPrimary: "#151515",
+	bgSecondary: "#1b1b1b",
+	bgTertiary: "#252525",
+	bgQuaternary: "#303030",
+
+	fg: "#a1b0b8",
+	fgSecondary: "#838d93",
+
+	fgTertiary: "#757f85",
+
+	accent600: "#832e31",
+	accent500: "#a63c40",
+	accent400: "#d3494e",
+	accent300: "#fc595f",
+	accent200: "#df9395",
+	accent100: "#ba8586",
+
+	roundSmall: "8px",
+	roundMedium: "16px",
+	roundLarge: "24px",
+	roundFull: "9999px",
+};
+
 const styles = `
 * {
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
-	font-family: var(--font-primary);
+	font-family: ${theme.fontPrimary};
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
-	--font-primary: Iosevka Custom Web, monospace;
-
-	--background-primary: #151515;
-	--background-secondary: #1b1b1b;
-	--background-tertiary: #252525;
-	--background-quaternary: #303030;
-
-	--foreground: #a1b0b8;
-	--foreground-secondary: #838d93;
-	--foreground-tertiary: #757f85;
-
-	--accent-600: #832e31;
-	--accent-500: #a63c40;
-	--accent-400: #d3494e;
-	--accent-300: #fc595f;
-	--accent-200: #df9395;
-	--accent-100: #ba8586;
-
-	--round-small: 0.5rem;
-	--round-medium: 1rem;
-	--round-large: 1.5rem;
-	--round-full: 9999px;
-
-	font-family: var(--font-primary);
-	background-color: var(--background-primary);
-	color: var(--foreground);
-
+	font-family: ${theme.fontPrimary};
+	background-color: ${theme.bgPrimary};
+	color: ${theme.fg};
 	color-scheme: dark;
+	overflow-x: hidden;
 }
 
 body {
 	margin: 0;
-}
-
-main {
-	padding-inline: 1rem;
-	margin: auto;
-	max-width: 832px;
-	padding-top: 3rem;
+	overflow-x: hidden;
 }
 
 a {
 	cursor: pointer;
 	text-decoration: none;
-	color: var(--foreground);
+	color: ${theme.fg};
 }
 
 a:not(.button):not(.card), a:not(.button):not(.card):visited {
-	color: var(--accent-400);
+	color: ${theme.accent400};
 	font-weight: 600;
 }
+
 a:not(.button):not(.card):hover {
 	text-decoration: underline;
 }
 
 button, .button {
-	background-color: var(--background-secondary);
-	color: var(--foreground);
-	border: 0.5px solid var(--background-tertiary);
-	border-radius: var(--round-full);
-	padding-inline: 1rem;
-	padding-block: 0.7rem;
+	background-color: ${theme.bgSecondary};
+	color: ${theme.fg};
+	border: 0.5px solid ${theme.bgTertiary};
+	-moz-border-radius: ${theme.roundFull};
+	-khtml-border-radius: ${theme.roundFull};
+	-webkit-border-radius: ${theme.roundFull};
+	border-radius: ${theme.roundFull};
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 11.2px;
+	padding-bottom: 11.2px;
 	cursor: pointer;
-	margin-top: 1rem;
-	margin-right: 0.5rem;
+	margin-top: 16px;
+	margin-right: 8px;
 	display: block;
 	text-align: center;
 }
 
 button.prominent, .button.prominent {
-	border-color: var(--accent-300);
-	background-color: var(--accent-400);
-	color: var(--background-primary);
+	border-color: ${theme.accent300};
+	background-color: ${theme.accent400};
+	color: ${theme.bgPrimary};
 	font-weight: 600;
 }
 
 hr {
 	border: none;
-	background-color: var(--background-tertiary);
+	background-color: ${theme.bgTertiary};
 	height: 1px;
-	margin-block: 0;
-	margin-top: 1rem;
+	margin-top: 16px;
+	margin-bottom: 0;
 }
 
 .card {
-	border-radius: var(--round-medium);
-	padding-inline: 1rem;
-	padding-bottom: 1rem;
-	background-color: var(--background-secondary);
-	border: 1px solid var(--background-tertiary);
+	-moz-border-radius: ${theme.roundMedium};
+	-khtml-border-radius: ${theme.roundMedium};
+	-webkit-border-radius: ${theme.roundMedium};
+	border-radius: ${theme.roundMedium};
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-bottom: 16px;
+	background-color: ${theme.bgSecondary};
+	border: 1px solid ${theme.bgTertiary};
 	margin-top: 0rem;
+	-webkit-transition: background-color .1s, border-color .1s;
+	-o-transition: background-color .1s, border-color .1s;
 	transition: background-color .1s, border-color .1s;
+	display: block;
 }
 
 .card hr {
-	margin-inline: -1rem;
+	margin-left: -16px;
+	margin-right: -16px;
 }
 
 a.card:hover {
-	background-color: var(--background-tertiary);
-	border-color: var(--background-quaternary);
+	background-color: ${theme.bgTertiary};
+	border-color: ${theme.bgQuaternary};
 }
 
 a.card hr {
-
+	-webkit-transition: background-color .1s;
+	-o-transition: background-color .1s;
 	transition: background-color .1s;
 }
 
 a.card:hover hr {
-	background-color: var(--background-quaternary);
+	background-color: ${theme.bgQuaternary};
 }
 
 ::selection {
-	background-color: var(--accent-400);
-	color: var(--background-primary);
+	background-color: ${theme.accent400};
+	color: ${theme.bgPrimary};
+}
+
+::-moz-selection {
+	background-color: ${theme.accent400};
+	color: ${theme.bgPrimary};
 }
 
 p, b {
 	margin-bottom: 0;
-	margin-top: 1rem;
+	margin-top: 16px;
 	font-size: 14px;
 }
 
 h1 {
-	margin-block: 1rem 0;
+	margin-top: 16px;
+	margin-bottom: 0;
 	font-size: 24px;
 }
 
 h2 {
-	margin-block: 1.75rem 1rem;
+	margin-top: 28px;
+	margin-bottom: 16px;
 	font-weight: 600;
 	font-style: italic;
 	font-size: 16px;
 }
 
-.grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 1rem;
+table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 0;
 }
 
-.spacer {
-	flex: 1;
+td {
+	vertical-align: top;
+}
+
+tr td {
+	padding-left: 4px;
+	padding-bottom: 8px
+}
+
+tr td:first-child {
+	padding-left: 0px;
+	padding-right: 4px;
+}
+
+@media (max-width: 600px) {
+	table {
+		display: block !important;
+		width: 100% !important;
+	}
+	tbody {
+		display: block !important;
+		width: 100% !important;
+	}
+	td {
+		display: block !important;
+		width: 100% !important;
+		margin-bottom: 10px !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		padding-bottom: 0 !important;
+	}
+	tr {
+		display: block !important;
+		width: 100% !important;
+	}
 }
 
 .lastfm-card {
-	display: flex;
-	gap: 1rem;
-	padding-top: 1rem;
-	align-items: center;
+	display: table;
+	width: 100%;
+	border-collapse: separate;
+	padding-top: 16px;
+	margin-right: 0;
 }
 
-.lastfm-info {
-	display: flex;
-	gap: 4.5px;
-	flex-direction: column;
+.lastfm-art-container {
+	display: table-cell;
+	vertical-align: top;
+	width: 1px;
 }
 
 .lastfm-art {
-	border-radius: var(--round-small);
+	display: block;
+	-webkit-border-radius: ${theme.roundSmall};
+	border-radius: ${theme.roundSmall};
+	width: 70px;
+	height: 70px;
+}
+
+.lastfm-info {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 12px;
+}
+
+.lastfm-title, .lastfm-artist, .lastfm-status {
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+}
+
+.lastfm-info * {
+	vertical-align: middle;
+}
+
+.lastfm-info .icon {
+	margin-right: 4px;
+	width: 14px;
+	height: 14px !important;
+	vertical-align: middle !important;
 }
 
 .lastfm-title {
-	margin-top: 0;
 	font-weight: 600;
 	font-size: 1.25rem;
-	display: -webkit-box;
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
-	text-overflow: ellipsis;
+	display: block;
+	white-space: nowrap;
 	overflow: hidden;
-	line-clamp: 1;
-	max-width: 500px;
-}
-
-.lastfm-artist {
-	margin-top: 0;
-	display: flex;
-	align-items: center;
-	gap: 4px;
 	text-overflow: ellipsis;
-}
-
-.lastfm-logo {
-	align-self: flex-start;
 }
 
 footer {
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 }
+
 footer sub {
 	font-weight: 600;
-	color: var(--foreground-tertiary);
+	color: ${theme.fgTertiary};
 }
+
 footer sub a {
-	color: var(--foreground-tertiary) !important;
+	color: ${theme.fgTertiary} !important;
 	text-decoration: underline;
 }
 
 .project-title {
-	display: flex;
-	align-items: center;
-	padding-top: 1rem;
-	gap: 0.3rem;
-}
-.project-title p {
-	margin-top: 0;
-	line-height: 0;
+	display: block;
+	padding-top: 16px;
 }
 
-.project-title-title {
+.project-title * {
+	display: inline;
+}
+
+.project-title-left {
+	margin-top: 0;
 	font-weight: 500;
 }
 
+.project-title-right {
+	float: right;
+}
+
 .project-lang {
-	color: var(--foreground);
-	font-weight: 100;
-	font-size: 13px;
+	display: inline;
+	vertical-align: middle;
 }
 
 .project-dot {
-	border-radius: var(--round-full);
-	background: var(--color);
+	-moz-border-radius: ${theme.roundFull};
+	-khtml-border-radius: ${theme.roundFull};
+	-webkit-border-radius: ${theme.roundFull};
+	border-radius: ${theme.roundFull};
 	width: 12px;
 	height: 12px;
+	margin-right: 4.8px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.friends {
+	width: 100%:
 }
 
 .friend {
+	image-rendering: -moz-crisp-edges;
 	image-rendering: pixelated;
 	margin-right: 5px;
+}
+
+center.content {
+	text-align: start;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 864px;
+	padding-top: 48px;
 }
 `;
 
@@ -251,12 +349,17 @@ export default function (
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<title>/peɪd͡ʒ/</title>
 				<link rel="stylesheet" href="/iosevka-custom/import.css" />
+				<link rel="stylesheet" href="/fontello/import.css" />
 				<style>{styles}</style>
 			</head>
 			<body>
-				<main>
-					{[children]}
-				</main>
+				{/* @ts-ignore */}
+				<center class="content">
+					<main>
+						{[children]}
+					</main>
+					{/* @ts-ignore */}
+				</center>
 			</body>
 		</html>
 	);
