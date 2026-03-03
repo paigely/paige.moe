@@ -47,5 +47,27 @@ router.get("/", async (ctx) => {
 		),
 	);
 });
+router.get("/.well-known/matrix/client", (ctx) => {
+	return ctx.json({
+		"m.homeserver": {
+			base_url: "https://tuwunel.maize.moe",
+		},
+	}, {
+		headers: {
+			"Content-Type": "application/json",
+			"Access-Control-Allow-Origin": "*",
+		},
+	});
+});
+router.get("/.well-known/matrix/server", (ctx) => {
+	return ctx.json({
+		"m.server": "tuwunel.maize.moe:443",
+	}, {
+		headers: {
+			"Content-Type": "application/json",
+			"Access-Control-Allow-Origin": "*",
+		},
+	});
+});
 
 Deno.serve(router.fetch);
