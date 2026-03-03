@@ -4,8 +4,7 @@ export default function ({ track }: { track?: LastFM.Track }) {
 	if (!track) return;
 	const { name, url } = track;
 	const artist = track.artist?.["#text"];
-	const coverArt = (track.image?.[3] ??
-		track.image?.[2] ??
+	const coverArt = (track.image?.[2] ??
 		track.image?.[1] ??
 		track.image?.[0])?.["#text"];
 	const album = track.album?.["#text"];
@@ -18,7 +17,7 @@ export default function ({ track }: { track?: LastFM.Track }) {
 			<a class="card lastfm-card" href={url} target="_blank">
 				<div class="lastfm-art-container">
 					<img
-						src={coverArt}
+						src={coverArt.replaceAll("https://", "http://")}
 						class="lastfm-art"
 						width={70}
 						height={70}

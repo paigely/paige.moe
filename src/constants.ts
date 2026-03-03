@@ -146,7 +146,7 @@ export const FRIENDS: Friend[] = [
 	},
 	{
 		href: "https://faf4a.me/",
-		image: "/badges/fafa.png",
+		image: "/badges/fafa.gif",
 		title: "fafa",
 	},
 ];
