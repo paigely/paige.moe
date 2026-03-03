@@ -245,7 +245,7 @@ export default function (
 	{ children }: { children: JsxElement | JsxElement[] },
 ) {
 	return (
-		<html>
+		<html lang="en">
 			<head>
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />

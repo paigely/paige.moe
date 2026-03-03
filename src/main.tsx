@@ -30,7 +30,7 @@ router.use(
 router.get("/", async (ctx) => {
 	const track = await getTrack();
 	return ctx.html(
-		"<DOCTYPE !html>" + (
+		"<!DOCTYPE html>" + (
 			<MainLayout>
 				<h1>/peɪd͡ʒ/</h1>
 				<p>I occasionally write half-assed software.</p>

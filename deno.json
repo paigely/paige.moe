@@ -1,6 +1,6 @@
 {
 	"imports": {
-		"@july/snarl": "jsr:@july/snarl@^0.3.3"
+		"@july/snarl": "jsr:@july/snarl@^0.3.4"
 	},
 	"tasks": {
 		"dev": "deno run --env-file=.env -P --watch src/main.tsx",
