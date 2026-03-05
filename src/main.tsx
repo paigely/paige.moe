@@ -71,5 +71,8 @@ router.get("/.well-known/matrix/server", (ctx) => {
 		},
 	});
 });
+router.get("/.well-known/atproto-did", (ctx) => {
+	return ctx.text("did:plc:sfwpfvrm4l5wu7psbw7dryxr");
+});
 
 Deno.serve(router.fetch);
