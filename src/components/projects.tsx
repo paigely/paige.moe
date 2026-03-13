@@ -37,7 +37,6 @@ export default function (
 									</a>
 								</td>
 							))}
-							{row.length < columns && <div class="card-spacer"></div>}
 						</tr>
 					))}
 				</tbody>

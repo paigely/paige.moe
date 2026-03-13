@@ -34,11 +34,11 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		owner: "paige",
-		title: "maize.moe",
-		description: "This site",
-		href: "https://github.com/paigely/maize.moe",
-		language: "TypeScript",
-		languageColor: "#3178c6",
+		title: "Filecafe",
+		description: "File manager for jailbroken iOS >=14.0",
+		href: "https://github.com/paigely/Filecafe",
+		language: "Swift",
+		languageColor: "#f05138",
 	},
 ];
 
@@ -138,11 +138,6 @@ export const FRIENDS: Friend[] = [
 		href: "https://wingio.xyz/",
 		image: "/badges/wing.gif",
 		title: "wing",
-	},
-	{
-		href: "https://lumina0machina.github.io/",
-		image: "/badges/lumina.png",
-		title: "lumina",
 	},
 	{
 		href: "https://faf4a.me/",
